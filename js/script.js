@@ -1,6 +1,11 @@
 function getComputerChoice() {
-    let choices = ['Rock', 'Paper', 'Scissors'];
+    let choices = ['rock', 'paper', 'scissors'];
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+    let humanChoice = prompt('Enter value: ', '');
+    return humanChoice;
+}
+
+console.log(getHumanChoice());
