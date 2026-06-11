@@ -1,12 +1,20 @@
 const buttons = document.querySelectorAll("button");
-const gameInfo = document.querySelector('.gameInfo');
+const gameInfo = document.querySelector(".gameInfo");
+const humanScoreDom = document.querySelector(".humanScore");
+const computerScoreDom = document.querySelector(".computerScore");
+const gameWinner = document.querySelector(".gameWinner");
+
 let humanScore = 0;
 let computerScore = 0;
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
-    let humanChoice = e.target.getAttribute('data-btn');
+    clearWinner();
+    let humanChoice = e.target.getAttribute("data-btn");
     playRound(humanChoice);
+    humanScoreDom.textContent = humanScore;
+    computerScoreDom.textContent = computerScore;
+    defineWinner();
   });
 });
 
@@ -55,5 +63,26 @@ function playRound(humanChoice) {
     if (computerChoice === "scissors") {
       gameInfo.textContent = "Tie!";
     }
+  }
+}
+
+function defineWinner() {
+  if (computerScore === 5) {
+    gameWinner.textContent = `The winner of the game is COMPUTER`;
+    clearScore();
+  } else if (humanScore === 5) {
+    gameWinner.textContent = `The winner of the game is HUMAN`;
+    clearScore();
+  }
+}
+
+function clearScore() {
+  computerScore = 0;
+  humanScore = 0;
+}
+
+function clearWinner() {
+  if (gameWinner.textContent !== '') {
+    gameWinner.textContent = '';
   }
 }

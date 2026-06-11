@@ -1,34 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./js/script.js" defer></script>
     <title>Rock Paper Scissors</title>
     <style>
-        body {
-            background-color: lightgray;
-            font-family: sans-serif;
-        }
-        .btns {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 100px;
-            gap: 15px;
-        }
-        .gameInfo {
-            text-align: center;
-            font-size: 30px;
-        }
+      body {
+        background-color: lightgray;
+        font-family: sans-serif;
+      }
+      .btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        gap: 15px;
+      }
+      .gameInfo {
+        text-align: center;
+        font-size: 30px;
+      }
+      .gameScore {
+        font-size: 50px;
+        text-align: center;
+      }
+      .gameWinner {
+        text-align: center;
+        font-size: 30px;
+      }
     </style>
-</head>
-<body>
-    <p class="gameInfo">Hello! Click on one of the buttons to start the game!</p>
+  </head>
+  <body>
+    <p class="gameInfo">
+      Hello! Click on one of the buttons to start the game!
+    </p>
+    <p class="gameWinner"></p>
+    <p class="gameScore">
+      &#128100;<span class="humanScore">0</span>:<span
+        class="computerScore"
+      >0</span
+      >&#128187;
+    </p>
     <div class="btns">
-        <button data-btn="rock">Rock</button>
-        <button data-btn="paper">Paper</button>
-        <button data-btn="scissors">Scissors</button>
+      <button data-btn="rock">Rock</button>
+      <button data-btn="paper">Paper</button>
+      <button data-btn="scissors">Scissors</button>
     </div>
-</body>
+  </body>
 </html>
