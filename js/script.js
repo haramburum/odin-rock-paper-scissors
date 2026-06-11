@@ -12,8 +12,7 @@ buttons.forEach((button) => {
     clearWinner();
     let humanChoice = e.target.getAttribute("data-btn");
     playRound(humanChoice);
-    humanScoreDom.textContent = humanScore;
-    computerScoreDom.textContent = computerScore;
+    updateScore();
     defineWinner();
   });
 });
@@ -27,37 +26,20 @@ function playRound(humanChoice) {
   const computerChoice = getComputerChoice();
 
   if (humanChoice === computerChoice) {
-     gameInfo.textContent = `Tie!`;
-  }
-  
-  if (humanChoice === "rock") {
-    if (computerChoice === "scissors") {
-      humanScore++;
-      gameInfo.textContent = `You win! ${humanChoice} beat ${computerChoice}`;
-    } else if (computerChoice === "paper") {
-      computerScore++;
-      gameInfo.textContent = `You lose! ${computerChoice} beat ${humanChoice}`;
-    }
+    gameInfo.textContent = `Tie!`;
+    return;
   }
 
-  if (humanChoice === "paper") {
-    if (computerChoice === "rock") {
-      humanScore++;
-      gameInfo.textContent = `You win! ${humanChoice} beat ${computerChoice}`;
-    } else if (computerChoice === "scissors") {
-      computerScore++;
-      gameInfo.textContent = `You lose! ${computerChoice} beat ${humanChoice}`;
-    }
-  }
-
-  if (humanChoice === "scissors") {
-    if (computerChoice === "paper") {
-      humanScore++;
-      gameInfo.textContent = `You win! ${humanChoice} beat ${computerChoice}`;
-    } else if (computerChoice === "rock") {
-      computerScore++;
-      gameInfo.textContent = `You lose! ${computerChoice} beat ${humanChoice}`;
-    }
+  if (
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "scissors" && computerChoice === "paper")
+  ) {
+    humanScore++;
+    gameInfo.textContent = `You win! ${humanChoice} beat ${computerChoice}`;
+  } else {
+    computerScore++;
+    gameInfo.textContent = `You lose! ${computerChoice} beat ${humanChoice}`;
   }
 }
 
@@ -71,13 +53,18 @@ function defineWinner() {
   }
 }
 
+function updateScore() {
+  humanScoreDom.textContent = humanScore;
+  computerScoreDom.textContent = computerScore;
+}
+
 function clearScore() {
   computerScore = 0;
   humanScore = 0;
 }
 
 function clearWinner() {
-  if (gameWinner.textContent !== '') {
-    gameWinner.textContent = '';
+  if (gameWinner.textContent !== "") {
+    gameWinner.textContent = "";
   }
 }
