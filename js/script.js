@@ -1,4 +1,5 @@
 const buttons = document.querySelectorAll("button");
+const gameInfo = document.querySelector('.gameInfo');
 let humanScore = 0;
 let computerScore = 0;
 
@@ -20,39 +21,39 @@ function playRound(humanChoice) {
   if (humanChoice === "rock") {
     if (computerChoice === "paper") {
       humanScore++;
-      console.log(`You win! ${humanChoice} beat ${computerChoice}`);
+      gameInfo.textContent = `You win! ${humanChoice} beat ${computerChoice}`;
     } else if (computerChoice === "scissors") {
       computerScore++;
-      console.log(`You lose! ${computerChoice} beat ${humanChoice}`);
+      gameInfo.textContent = `You lose! ${computerChoice} beat ${humanChoice}`;
     }
     if (computerChoice === "rock") {
-      console.log("Tie!");
+      gameInfo.textContent = "Tie!";
     }
   }
 
   if (humanChoice === "paper") {
     if (computerChoice === "rock") {
       humanScore++;
-      console.log(`You win! ${humanChoice} beat ${computerChoice}`);
+      gameInfo.textContent = `You win! ${humanChoice} beat ${computerChoice}`;
     } else if (computerChoice === "scissors") {
       computerScore++;
-      console.log(`You lose! ${computerChoice} beat ${humanChoice}`);
+      gameInfo.textContent = `You lose! ${computerChoice} beat ${humanChoice}`;
     }
     if (computerChoice === "paper") {
-      console.log("Tie!");
+      gameInfo.textContent = "Tie!";
     }
   }
 
   if (humanChoice === "scissors") {
     if (computerChoice === "paper") {
       humanScore++;
-      console.log(`You win! ${humanChoice} beat ${computerChoice}`);
+      gameInfo.textContent = `You win! ${humanChoice} beat ${computerChoice}`;
     } else if (computerChoice === "rock") {
       computerScore++;
-      console.log(`You lose! ${computerChoice} beat ${humanChoice}`);
+      gameInfo.textContent = `You lose! ${computerChoice} beat ${humanChoice}`;
     }
     if (computerChoice === "scissors") {
-      console.log("Tie!");
+      gameInfo.textContent = "Tie!";
     }
   }
 }
