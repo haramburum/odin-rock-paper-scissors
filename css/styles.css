@@ -1,0 +1,23 @@
+body {
+  background-color: lightgray;
+  font-family: sans-serif;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  gap: 15px;
+}
+.gameInfo {
+  text-align: center;
+  font-size: 30px;
+}
+.gameScore {
+  font-size: 50px;
+  text-align: center;
+}
+.gameWinner {
+  text-align: center;
+  font-size: 30px;
+}
