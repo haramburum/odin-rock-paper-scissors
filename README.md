@@ -1,3 +1,4 @@
-# Odin project rock paper scissors game
+#Rock paper scissors game
 
-The starting project of the game stone scissors paper for The Odin Project training task.
+An educational project of The Odin Project course, which aims to learn basic html, css, and js skills. 
+Link to the current project status: https://haramburum.github.io/odin-rock-paper-scissors/
