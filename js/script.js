@@ -26,16 +26,17 @@ function getComputerChoice() {
 function playRound(humanChoice) {
   const computerChoice = getComputerChoice();
 
+  if (humanChoice === computerChoice) {
+     gameInfo.textContent = `Tie!`;
+  }
+  
   if (humanChoice === "rock") {
-    if (computerChoice === "paper") {
+    if (computerChoice === "scissors") {
       humanScore++;
       gameInfo.textContent = `You win! ${humanChoice} beat ${computerChoice}`;
-    } else if (computerChoice === "scissors") {
+    } else if (computerChoice === "paper") {
       computerScore++;
       gameInfo.textContent = `You lose! ${computerChoice} beat ${humanChoice}`;
-    }
-    if (computerChoice === "rock") {
-      gameInfo.textContent = "Tie!";
     }
   }
 
@@ -47,9 +48,6 @@ function playRound(humanChoice) {
       computerScore++;
       gameInfo.textContent = `You lose! ${computerChoice} beat ${humanChoice}`;
     }
-    if (computerChoice === "paper") {
-      gameInfo.textContent = "Tie!";
-    }
   }
 
   if (humanChoice === "scissors") {
@@ -59,9 +57,6 @@ function playRound(humanChoice) {
     } else if (computerChoice === "rock") {
       computerScore++;
       gameInfo.textContent = `You lose! ${computerChoice} beat ${humanChoice}`;
-    }
-    if (computerChoice === "scissors") {
-      gameInfo.textContent = "Tie!";
     }
   }
 }
